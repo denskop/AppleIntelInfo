@@ -13,6 +13,7 @@
 		90BE8FD319A20FD200E9E8B5 /* AppleIntelInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 90BE8FD219A20FD200E9E8B5 /* AppleIntelInfo.h */; };
 		90BE8FD519A2104A00E9E8B5 /* essentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 90BE8FD419A2104A00E9E8B5 /* essentials.h */; };
 		90F0224E1EF918BF0095F865 /* intel_family.h in Headers */ = {isa = PBXBuildFile; fileRef = 90F0224D1EF918BF0095F865 /* intel_family.h */; };
+		C1212E6725697D0800F01F4C /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1212E6625697D0800F01F4C /* libkmod.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		90BE8FD419A2104A00E9E8B5 /* essentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = essentials.h; sourceTree = "<group>"; };
 		90EACB9219A6B7F800512CC9 /* AppleIntelRegisterDumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleIntelRegisterDumper.h; path = AppleIntelRegisterDumper/AppleIntelRegisterDumper.h; sourceTree = "<group>"; };
 		90F0224D1EF918BF0095F865 /* intel_family.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intel_family.h; sourceTree = "<group>"; };
+		C1212E6625697D0800F01F4C /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = MacKernelSDK/Library/x86_64/libkmod.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1212E6725697D0800F01F4C /* libkmod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,7 @@
 		90BE8FBD19A20EDF00E9E8B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1212E6625697D0800F01F4C /* libkmod.a */,
 				90BE8FBE19A20EDF00E9E8B5 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -178,6 +182,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 90BE8FB019A20EDF00E9E8B5;
@@ -260,6 +265,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -299,6 +306,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -313,6 +322,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppleIntelInfo/AppleIntelInfo-Prefix.pch";
 				INFOPLIST_FILE = "AppleIntelInfo/AppleIntelInfo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacKernelSDK/Library/x86_64",
+				);
 				MODULE_NAME = com.pikeralpha.driver.AppleIntelInfo;
 				MODULE_START = 0;
 				MODULE_STOP = 0;
@@ -334,6 +347,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppleIntelInfo/AppleIntelInfo-Prefix.pch";
 				INFOPLIST_FILE = "AppleIntelInfo/AppleIntelInfo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacKernelSDK/Library/x86_64",
+				);
 				MODULE_NAME = com.pikeralpha.driver.AppleIntelInfo;
 				MODULE_START = 0;
 				MODULE_STOP = 0;
